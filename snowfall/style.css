@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #01121b;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+  height: auto;
+  color: #e46f01;
+  border-radius: 0.25rem;
+  padding: 3rem;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 1px #266349, 0 0 1px #083f27;
+          box-shadow: 0 0 1px #266349, 0 0 1px #083f27;
+}
+
+.card h1 {
+  font-size: 3rem;
+  font-family: 'Oooh Baby', cursive;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 0.875rem;
+  color: white;
+}
+
+.card:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 20px;
+  background-image: linear-gradient(-45deg, #0c6333 25%, #d61334 25%, #d61334 50%, #0c6333 50%, #0c6333 75%, #d61334 75%, #d61334 100%);
+  background-size: 84.85px 84.85px;
+}
+
+.card:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(2, 41, 47, 0.5);
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  content: '';
+  z-index: -1;
+}
+
+.snow {
+  position: absolute;
+  top: -10px;
+  display: block;
+  width: 3px;
+  height: 3px;
+  background-color: white;
+  border-radius: 6px;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+  -webkit-animation: snowfall;
+          animation: snowfall;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes snowfall {
+  from {
+    top: -10px;
+  }
+  to {
+    top: 99%;
+    opacity: 0;
+  }
+}
+
+@keyframes snowfall {
+  from {
+    top: -10px;
+  }
+  to {
+    top: 99%;
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */

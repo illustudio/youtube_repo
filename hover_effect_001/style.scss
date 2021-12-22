@@ -1,0 +1,147 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+$primary: hsl(219, 29%, 12%);
+$secondary: hsl(23, 55%, 72%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: Pretendard, sans-serif;
+  background-color: $primary;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  height: 100vh;
+  position: relative;
+  gap: 3rem;
+  padding: 0 3rem;
+  margin: 0 auto;
+}
+
+.video {
+  flex: 1 1 auto;
+  width: 20%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  border: 2px solid transparent;
+  animation: fadeUp 1s ease-in-out;
+
+  &::before,
+  &::after {
+    position: absolute;
+    width: 100%;
+
+    transition: all 0.3s ease-in-out;
+    opacity: 0.5;
+    content: '';
+    z-index: 1;
+  }
+  &::before {
+    top: -40px;
+    height: 240px;
+    background-color: $primary;
+    opacity: 0.5;
+  }
+  &::after {
+    bottom: -40px;
+    height: 140px;
+    background-color: $secondary;
+    opacity: 0.95;
+  }
+  &.active {
+    width: 50%;
+    border-radius: 1rem;
+    &::before {
+      top: -100%;
+    }
+    &::after {
+      bottom: -100%;
+    }
+    .video__info {
+      bottom: -100%;
+    }
+  }
+  &:hover {
+    border: 2px solid $secondary;
+    .video__info::before {
+      background-color: lighten($primary, 20%);
+    }
+  }
+
+  &__item {
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+}
+
+.video__info {
+  position: absolute;
+  color: $primary;
+  bottom: 0;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  padding: 1rem;
+
+  &__title {
+    font-size: 1.25rem;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 150%;
+  }
+
+  &__desc {
+    @extend .video__info__title;
+    font-size: 0.875rem;
+  }
+  &::before {
+    position: absolute;
+    content: 'play';
+    padding: 0.5rem 1rem;
+    top: -30px;
+    z-index: 100;
+    border-radius: 0.125rem;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    font-size: 0.725rem;
+    color: $secondary;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.06),
+      0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+    background-color: $primary;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
