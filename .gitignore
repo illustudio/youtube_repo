@@ -1,6 +1,10 @@
+# 테스트중인 폴더는 포함하지 말것
+canvas/*
+
 *.webm 
 *.mp4
 *.css.map 
+
 
 # Created by https://www.toptal.com/developers/gitignore/api/node
 # Edit at https://www.toptal.com/developers/gitignore?templates=node
