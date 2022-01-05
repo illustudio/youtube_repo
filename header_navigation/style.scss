@@ -1,0 +1,162 @@
+@charset "utf-8";
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+$background-default: #e5e5e5;
+$brand-color: #3b82f6;
+$background-dark: #1f2937;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR',
+    'Malgun Gothic', sans-serif;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $background-default;
+}
+
+.site__header {
+  background-color: white;
+  padding: 0 2rem;
+  width: 768px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.5rem;
+  transition: all 0.25s cubic-bezier(0.42, 0, 0, 1);
+  box-shadow: 0px 2px 4px -1px #0000000f, 0px 4px 6px -1px #0000001a;
+
+  &.darkmode {
+    background-color: $background-dark;
+    color: white;
+
+    .menu li a {
+      color: white;
+
+      &:hover {
+        color: $brand-color;
+      }
+
+      &.active {
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.brand {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 900;
+  &--point {
+    color: $brand-color;
+  }
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    a {
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: all 0.25s cubic-bezier(0.42, 0, 0, 1);
+      padding: 0 1rem;
+      z-index: 1;
+      user-select: none;
+      &.active {
+        color: white;
+
+        &:hover {
+          color: white;
+        }
+        &:before {
+          background-color: $brand-color;
+          z-index: -1;
+          transform: translateY(0%);
+        }
+      }
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        transform: translateY(100%);
+        transition: all 0.25s cubic-bezier(0.42, 0, 0, 1);
+      }
+      &:after {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: '';
+        width: 100%;
+        height: 0px;
+        background-color: $brand-color;
+        transition: all 0.1s ease-in-out;
+      }
+      &:hover {
+        color: $brand-color;
+        &:after {
+          width: 100%;
+          height: 4px;
+        }
+      }
+    }
+  }
+}
+.toggle {
+  position: relative;
+  display: flex;
+  background-color: $background-default;
+  width: 38px;
+  height: 22px;
+  border-radius: 22px;
+  cursor: pointer;
+  &--switch {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 18px;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s cubic-bezier(0.42, 0, 0, 1);
+  }
+
+  &.active {
+    background-color: $brand-color;
+    .toggle--switch {
+      left: calc(100% - 20px);
+    }
+  }
+}
