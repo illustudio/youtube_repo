@@ -1,5 +1,9 @@
+# webstorm
+.idea
+*/**/.idea
+
 # 테스트중인 폴더는 포함하지 말것
-canvas/*
+test/*
 
 *.webm 
 *.mp4

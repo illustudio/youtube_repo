@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Pushster&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  background-color: hsl(260, 20%, 10%);
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.headline {
+  user-select: none;
+  pointer-events: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.25rem;
+  animation: fadeIn 1s forwards;
+  svg {
+    display: flex;
+    justify-content: center;
+    font-family: 'Pushster', cursive;
+  }
+  .goodbye {
+    font-size: 2.5rem;
+    font-weight: 100;
+    fill: rgb(255, 174, 0);
+    opacity: 0;
+    animation: fadeIn 4s forwards 1s;
+  }
+  .new-year {
+    font-size: 3rem;
+    font-weight: 100;
+    stroke-width: 0.2px;
+    stroke: white;
+    stroke-dasharray: 400;
+    opacity: 0;
+    animation: revealText 5s forwards 1s;
+  }
+}
+.fireworks {
+  position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+}
+.particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: top;
+  &__item {
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    transform: translateY(0);
+    animation: fireworks;
+    animation-timing-function: cubic-bezier(0.69, 0.38, 0.82, 0.46);
+    animation-fill-mode: forwards;
+  }
+  // .particle:nth-child(1) {
+  //   transform: rotate(0deg);
+  // }
+  // .particle:nth-child(2) {
+  //   transform: rotate(60deg);
+  // }
+  // .particle:nth-child(3) {
+  //   transform: rotate(120deg);
+  // }
+  // .particle:nth-child(4) {
+  //   transform: rotate(180deg);
+  // }
+  // .particle:nth-child(5) {
+  //   transform: rotate(240deg);
+  // }
+  // .particle:nth-child(6) {
+  //   transform: rotate(300deg);
+  // }
+}
+
+@keyframes fireworks {
+  0% {
+    transform: translateY(0) scaleY(1);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(5vh) scaleY(10);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(10vh) scaleY(3);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(15vh) scaleY(1);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes revealText {
+  0% {
+    stroke-dashoffset: 400;
+    fill: transparent;
+    opacity: 0;
+  }
+  50% {
+    stroke-dashoffset: 800;
+    stroke-opacity: 1;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 800;
+    stroke-opacity: 0;
+    fill: white;
+    opacity: 1;
+  }
+}
