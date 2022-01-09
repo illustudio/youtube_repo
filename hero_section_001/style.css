@@ -1,0 +1,344 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-image: linear-gradient(135deg, #14050d 25%, rgba(34, 0, 204, 0.5) 100%), url("https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.hero__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  max-width: 1140px;
+  height: 50vh;
+  padding: 0 2rem;
+  z-index: 10;
+  color: white;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.hero__text h2 {
+  font-size: 8rem;
+  text-transform: uppercase;
+  -webkit-transform: skewX(-10deg);
+          transform: skewX(-10deg);
+  background: -webkit-gradient(linear, left top, right top, from(#ff0080), to(#2200cc));
+  background: linear-gradient(90deg, #ff0080 0%, #2200cc 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+}
+
+.hero__text p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero__text button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  outline: 0;
+  border: 0;
+  padding: 1.5rem 2.5rem;
+  width: 100%;
+  min-width: 64px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  background: radial-gradient(white 0%, white 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 1.125rem;
+  letter-spacing: -0.8px;
+  cursor: pointer;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  font-weight: 600;
+  position: relative;
+  border-radius: 2.5rem;
+  overflow: hidden;
+}
+
+.hero__text button:hover {
+  background: radial-gradient(#ff0080 0%, #2200cc 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero__text button:hover::before {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.hero__text button:hover::after {
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+}
+
+.hero__text button::before, .hero__text button::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+          transform: translate(-50%, -50%) rotate(0deg);
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
+}
+
+.hero__text button::before {
+  width: 120%;
+  height: 450%;
+  z-index: -2;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ff0080), to(#2200cc));
+  background: linear-gradient(90deg, #ff0080 10%, #2200cc 100%);
+  -webkit-animation: spinGradient 1.75s linear infinite;
+          animation: spinGradient 1.75s linear infinite;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.hero__text button::after {
+  width: calc(100% - 14px);
+  height: calc(100% - 14px);
+  z-index: -1;
+  background: black;
+}
+
+.hero__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1140px;
+  width: 100%;
+  z-index: 10;
+}
+
+.list__wrapper {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+
+.list__wrapper::before, .list__wrapper::after {
+  position: absolute;
+  content: '';
+  left: 50%;
+  height: 400px;
+  -webkit-transform: translateX(-50%) skewY(3deg);
+          transform: translateX(-50%) skewY(3deg);
+  width: 200%;
+}
+
+.list__wrapper::before {
+  background-color: white;
+  z-index: 1;
+  bottom: 0;
+}
+
+.list__wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-color: #4400cc;
+  z-index: 0;
+  -webkit-transform: translateX(-50%) skewY(-3deg);
+          transform: translateX(-50%) skewY(-3deg);
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+}
+
+.card__image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 200px;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
+  cursor: pointer;
+  -webkit-filter: contrast(50%) saturate(10%);
+          filter: contrast(50%) saturate(10%);
+  position: relative;
+  z-index: 1;
+}
+
+.card__image::before, .card__image::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
+  -webkit-transform: scale(0.99) skewY(0deg);
+          transform: scale(0.99) skewY(0deg);
+}
+
+.card__image::before {
+  z-index: -1;
+  background-color: #ff0080;
+  top: 0;
+  left: 0;
+}
+
+.card__image::after {
+  z-index: -2;
+  background-color: #2200cc;
+  bottom: 0;
+  right: 0;
+}
+
+.card__image:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-filter: contrast(100%) saturate(100%);
+          filter: contrast(100%) saturate(100%);
+}
+
+.card__image:hover ~ .card__content {
+  padding-top: 1.5rem;
+}
+
+.card__image:hover::before, .card__image:hover::after {
+  -webkit-transform: scale(1) skewY(-2.5deg);
+          transform: scale(1) skewY(-2.5deg);
+}
+
+.card__image:hover::before {
+  top: 9px;
+  left: 0;
+}
+
+.card__image:hover::after {
+  bottom: 9px;
+  right: 0px;
+}
+
+.card__image img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
+}
+
+.card__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0.5rem 2rem 0;
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
+}
+
+.card__content__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #2200cc;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.card__content__excerpt {
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  font-weight: 300;
+  color: gray;
+}
+
+@-webkit-keyframes spinGradient {
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(1turn);
+            transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+@keyframes spinGradient {
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(1turn);
+            transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+/*# sourceMappingURL=style.css.map */
